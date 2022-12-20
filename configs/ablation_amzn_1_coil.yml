@@ -1,0 +1,85 @@
+
+EXP_NAME: "semsup_descs_100ep_newds_cosine"             
+EXP_DESC: "SemSup Descriptions ran for 100 epochs"
+
+DATA:
+    task_name: amazon13k
+    dataset_name: amazon13k
+    dataset_config_name: null
+    max_seq_length: 160
+    overwrite_output_dir: false # Set to false, if using one_hour_job
+    overwrite_cache: false
+    pad_to_max_length: true
+    load_from_local: true
+    max_train_samples: null
+    max_eval_samples: null
+    max_predict_samples: null
+    train_file: datasets/Amzn13K/train_split6500_2.jsonl
+    validation_file: datasets/Amzn13K/test_unseen_split6500_2.jsonl
+    test_file: datasets/Amzn13K/test_unseen_split6500_2.jsonl
+    label_max_seq_length: 160
+    # descriptions_file: datasets/Amzn13K/amzn_curie_descsriptions.json
+    descriptions_file: datasets/Amzn13K/heir_withdescriptions_v3_v3_unseen_final.json
+    test_descriptions_file: datasets/Amzn13K/heir_withdescriptions_v3_v3.json
+
+    all_labels : datasets/Amzn13K/all_labels.txt
+    test_labels: datasets/Amzn13K/unseen_labels_split6500_2.txt
+
+    contrastive_learning_samples: 1000
+    cl_min_positive_descs: 1
+    # bm_short_file: datasets/eurlex4.3k/train_bmshort.txt
+    # ignore_pos_labels_file: datasets/Amzn13K/ignore_train_split6500_fs5.txt
+    coil_cluster_mapping_path: bert_coil_map_dict_lemma255K_isotropic.json
+
+MODEL:
+    model_name_or_path: bert-base-uncased
+    # pretrained_model_path: output/semsup_descs_amzn13k_web_6500_small/checkpoint-20000/pytorch_model.bin
+    config_name: null
+    tokenizer_name: null
+    cache_dir: null
+    use_fast_tokenizer: true
+    model_revision: main
+    use_auth_token: false
+    ignore_mismatched_sizes: false
+    negative_sampling: "none"
+    semsup: true
+    # label_model_name_or_path: bert-base-uncased # prajjwal1/bert-small
+    label_model_name_or_path: prajjwal1/bert-small
+    encoder_model_type: bert
+    use_custom_optimizer: adamw
+    output_learning_rate: 1.e-4
+    arch_type : 2
+    add_label_name: true
+    normalize_embeddings: false
+    tie_weights: false
+    coil: false
+    colbert: false
+    # use_precomputed_embeddings: datasets/eurlex4.3k/heir_withdescriptions_4.3k_v1_embs_bert_9_96.npy
+    token_dim: 16
+    label_frozen_layers: 2
+
+TRAINING:
+    do_train: true
+    do_eval: true
+    do_predict: false
+    per_device_train_batch_size: 1
+    gradient_accumulation_steps: 8
+    per_device_eval_batch_size: 1
+    learning_rate: 5.e-5 # Will point to input encoder lr, if user_custom_optimizer is False
+    num_train_epochs: 2
+    save_steps: 4900
+    evaluation_strategy: steps
+    eval_steps: 3000000
+    fp16: true
+    fp16_opt_level: O1
+    lr_scheduler_type: "linear" # defaults to 'linear'
+    dataloader_num_workers: 16
+    label_names: [labels]
+    scenario: "unseen_labels"
+
+    ddp_find_unused_parameters: false
+    max_eval_samples: 15000
+    ignore_data_skip: true
+    # one_hour_job: true
+    seed: -1
+

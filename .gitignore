@@ -1,0 +1,4 @@
+models
+datasets
+*.zip
+.nfs*

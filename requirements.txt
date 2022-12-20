@@ -1,0 +1,11 @@
+numpy
+torch
+torchvision
+transformers
+h5py
+tqdm
+gensim
+nltk
+pandas
+scipy
+scikit-learn
