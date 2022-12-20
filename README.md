@@ -5,7 +5,6 @@
   <a href="https://arxiv.org/abs/">Paper</a> 
 </p>
 
-[**Website**](https://sites.google.com/view/semsup-xc/home/) |  [**Paper**](https://arxiv.org/abs/)
 
 <p align="center">
   <a href="https://huggingface.co/spaces/Pranjal2041/SemSup-XC">
@@ -46,7 +45,7 @@ Inside the `semsup-xc` folder, download pre-processed datasets and scraped class
 You need to run `python main.py <config_file> <output_dir>` to train both zero-shot and few-shot models on both datasets. See [configs](configs) folder for list of all relevant config files.
 
 ### Evaluation
-For all datasets, you can directly run `main.py` script on updated config file containing pretrained model and `do_train` set to False. You can also adjust `random_sample` parameter to adjust the number of samples to evaluate on. 
+For all datasets, you can directly run `main.py` script by updating config file by changing `pretrained_model` parameter and and setting `do_train` set to False. You can also adjust `random_sample` parameter to adjust the number of samples to evaluate on. 
 For ensembling results with TF-IDF, use the `Evaluator.ipynb` script.
 Previous method is slow, and memory hungry. For faster inference in Amazon and Wikipedia datasets, use:
 `bash fastEval{DSET}.sh <config_file> <checkpoint_path>`.
@@ -57,6 +56,7 @@ Pre-trained models can be downloaded from [here](https://csciitd-my.sharepoint.c
 
 <h2 align="left" id="cite">Citing SemSup-XC</h2>
 
+<!-- 
 ```bibtex
 @article{aggarwal2022semsupxc,
   author = {Pranjal Aggarwal, Ameet Deshpande, Karthik Narasimhan},
@@ -64,7 +64,8 @@ Pre-trained models can be downloaded from [here](https://csciitd-my.sharepoint.c
   journal={arXiv preprint arXiv:2212.xxxx},
   year={2022}
 }
-```
+``` -->
+
 
 ## LICENSE
 
