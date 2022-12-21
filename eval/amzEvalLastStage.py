@@ -83,7 +83,7 @@ def get_prediction_results(preds, label_ids):
     return precisions_at_k
 
 import json
-coil_cluster_map = json.load(open('bert_coil_map_dict_lemma255K_isotropic.json'))  
+coil_cluster_map = json.load(open('config/bert_coil_map_dict_lemma255K_isotropic.json'))  
 
 all_lab_reps, all_label_embeddings, all_desc_input_ids, all_desc_attention_mask = [], [], [], []
 for l in tqdm(label_list):

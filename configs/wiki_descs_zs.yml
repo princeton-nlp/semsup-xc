@@ -36,7 +36,7 @@ DATA:
 
     # max_descs_per_label: 5
     contrastive_learning_samples: 750
-    coil_cluster_mapping_path: bert_coil_map_dict_lemma255K_isotropic.json
+    coil_cluster_mapping_path: config/bert_coil_map_dict_lemma255K_isotropic.json
 
 MODEL:
     model_name_or_path: bert-base-uncased

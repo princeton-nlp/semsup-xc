@@ -29,7 +29,7 @@ DATA:
     cl_min_positive_descs: 1
     # bm_short_file: datasets/eurlex4.3k/train_bmshort.txt
     ignore_pos_labels_file: datasets/Amzn13K/ignore_train_split6500_fs1.txt
-    coil_cluster_mapping_path: bert_coil_map_dict_lemma255K_isotropic.json
+    coil_cluster_mapping_path: config/bert_coil_map_dict_lemma255K_isotropic.json
 
 MODEL:
     model_name_or_path: bert-base-uncased

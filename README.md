@@ -30,6 +30,9 @@
 >Extreme classification (XC) involves classifying over large numbers of classes (thousands to millions), with real-world applications like news article classification and e-commerce product tagging. The zero-shot version of this task requires generalization to novel classes without additional supervision, like a new class "fidget spinner" for e-commerce product tagging. In this paper, we develop SemSup-XC, a model that achieves state-of-the-art zero-shot (ZS) and few-shot (FS) performance on three XC datasets spanning the domains of law, e-commerce, and Wikipedia. SemSup-XC uses automatically collected semantic class descriptions to represent classes ("fidget spinner" can be described as "A spinning toy for stress relief") and enables better generalization through our proposed hybrid matching module (Relaxed-COIL) which matches input instances to class descriptions using both (1) semantic similarity and (2) lexical similarity over contextual representations of similar tokens. Trained with contrastive learning, SemSup-XC significantly outperforms baselines and establishes state-of-the-art performance on all three datasets, by 5-12 precision@1 points on zero-shot and >10 precision@1 points on few-shot (K = 1), with similar gains for recall@10. Our ablation studies highlight the relative importance of our hybrid matching module (upto 2 P@1 improvement on AmazonCat) and automatically collected class descriptions (upto 5 P@1 improvement on AmazonCat).
 >
 
+![semsup](res/Teaser_Figure.png)
+
+
 ## Setup
 First clone the repository and install dependencies:
 ```
@@ -37,7 +40,7 @@ git clone https://github.com/princeton-nlp/semsup-xc.git
 pip install -r requirements.txt
 ```
 
-Inside the `semsup-xc` folder, download pre-processed datasets and scraped class descriptions from [here](https://csciitd-my.sharepoint.com/:u:/g/personal/cs5190443_iitd_ac_in/EYEczX6k7l9Ij0HksGrua1oBQKr_XmGh_huVXN25tCjPrw?e=pvVKPL). Unzip the downloaded file into datasets folder.
+Inside the `semsup-xc` folder, download pre-processed datasets and scraped class descriptions from [here](https://csciitd-my.sharepoint.com/:u:/g/personal/cs5190443_iitd_ac_in/EXIPIZqQEoxLtWF9efYC1IQBipua4PXWpWFWnO0NIZuzdg?e=ghYBfO). Unzip the downloaded file into datasets folder.
 
 ## Running
 
@@ -48,7 +51,7 @@ You need to run `python main.py <config_file> <output_dir>` to train both zero-s
 For all datasets, you can directly run `main.py` script by updating config file by changing `pretrained_model` parameter and and setting `do_train` set to False. You can also adjust `random_sample` parameter to adjust the number of samples to evaluate on. 
 For ensembling results with TF-IDF, use the `Evaluator.ipynb` script.
 Previous method is slow, and memory hungry. For faster inference in Amazon and Wikipedia datasets, use:
-`bash fastEval{DSET}.sh <config_file> <checkpoint_path>`.
+`bash scripts/fastEval{DSET}.sh <config_file> <checkpoint_path>`.
 
 
 ## Trained Models
