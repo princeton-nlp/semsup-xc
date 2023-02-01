@@ -59,15 +59,15 @@ Pre-trained models can be downloaded from [here](https://csciitd-my.sharepoint.c
 
 <h2 align="left" id="cite">Citing SemSup-XC</h2>
 
-<!-- 
+
 ```bibtex
-@article{aggarwal2022semsupxc,
-  author = {Pranjal Aggarwal, Ameet Deshpande, Karthik Narasimhan},
-  title = {SemSup-XC: Semantic Supervision for Extreme Classification},
-  journal={arXiv preprint arXiv:2212.xxxx},
-  year={2022}
+@article{aggarwal2023semsupxc,
+  title   = {SemSup-XC: Semantic Supervision for Zero and Few-shot Extreme Classification},
+  author  = {Pranjal Aggarwal and Ameet Deshpande and Karthik Narasimhan},
+  year    = {2023},
+  journal = {arXiv preprint arXiv: Arxiv-2301.11309}
 }
-``` -->
+```
 
 
 ## LICENSE
