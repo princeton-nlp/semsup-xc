@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://sites.google.com/view/semsup-xc/home/">Website</a> •
-  <a href="https://arxiv.org/abs/">Paper</a> 
+  <a href="https://arxiv.org/abs/2301.11309">Paper</a> 
 </p>
 
 
@@ -15,7 +15,7 @@
         <img src="https://img.shields.io/github/license/princeton-nlp/semsup-xc.svg"
              alt="GitHub license">
   </a>
-  <a href="https://twitter.com/intent/tweet?text=&url=https%3A%2F%2Fgithub.com%2princeton-nlp%2Fsemsup-xc">
+  <a href="https://twitter.com/intent/tweet?text=Check%20out%20Semsup-XC%3A%20https%3A%2F%2Fgithub.com%2Fprinceton-nlp%2Fsemsup-xc">
   <img src="https://img.shields.io/twitter/url/https/github.com/princeton-nlp/semsup-xc.svg?style=social" alt="Twitter">
   </a>      
 </p>
